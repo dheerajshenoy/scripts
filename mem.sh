@@ -1,4 +1,3 @@
 #!/bin/sh
-
-x=$(free -m | awk 'NR==2{printf "%.2f", $3*100/$2}')
-echo " MEM: $x% "
+a=$(free -m | awk 'NR == 2''{printf("%2.2f"), $3/$2*100}')
+echo "$a"
