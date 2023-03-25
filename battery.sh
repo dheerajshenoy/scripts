@@ -1,8 +1,7 @@
 #!/bin/sh
 
-status=$(cat /sys/class/power_supply/BAT0/status)
-perc=$(cat /sys/class/power_supply/BAT0/capacity)
+battery_name=BAT1
+status=$(cat /sys/class/power_supply/$battery_name/status)
+perc=$(cat /sys/class/power_supply/$battery_name/capacity)
 
-if [[ $status != "Full" ]]; then
-    echo "$perc% $status"
-fi
+echo "$perc% $status"
