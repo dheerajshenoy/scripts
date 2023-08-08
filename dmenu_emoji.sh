@@ -1,6 +1,6 @@
 #!/bin/sh
 
-chosen=$(cat ~/gits/dotfiles/emojis | rofi -dmenu | awk '{print $1}' | tr -d ' ')
+chosen=$(cat ~/dotfiles/emojis | rofi -dmenu -no-show-icons | awk '{print $1}' | tr -d ' ')
 
 [ -z "$chosen" ] && exit
 

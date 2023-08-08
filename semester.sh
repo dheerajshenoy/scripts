@@ -12,7 +12,7 @@ AS
 PS
 Astro
 "
-output=$(echo "$syllabusItems" | rofi -show drun -dmenu )
+output=$(echo "$syllabusItems" | rofi -show drun -dmenu -no-show-icons)
 
 case "$output" in 
     "NPP") xdg-open "$SEMDIR/Nuclear and Particle Physics/Syllabus.pdf"

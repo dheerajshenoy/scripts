@@ -11,7 +11,4 @@ proceed() {
     notify-send "PDF Fetched" "Enjoy"
 }
 
-wget --user-agent TryToStopMeFromUsingWgetNow -o $file $url -q --show-progress 2>&1 --progress=bar:force | grep '%'
-
-##&& proceed || notify-send "Error in grabbing the pdf" "Check the URL" && exit
-
+wget --user-agent TryToStopMeFromUsingWgetNow -o $file $url -q --show-progress 2>&1 --progress=bar:force | grep '%' && proceed || notify-send "Error in grabbing the pdf" "Check the URL" && exit

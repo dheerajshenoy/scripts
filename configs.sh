@@ -6,19 +6,21 @@ declare -A configs
 configs+=(
 [alacritty]="$configdir/alacritty/alacritty.yml"
 [sxhkd]="$configdir/sxhkd/sxhkdrc"
+[betterlockscreen]="$configdir/betterlockscreen/betterlockscreenrc"
 [lf]="$configdir/lf/lfrc"
 [zathura]="$configdir/zathura/zathurarc"
 [zsh]="$configdir/zsh/.zshrc"
 [nvim]="$configdir/nvim/init.lua"
-[networkmanager_dmenu]="$configdir/networkmanager_dmenu/config.ini"
 [dunst]="$configdir/dunst/dunstrc"
+[sioyek]="$configdir/sioyek/prefs.config"
+[starship]="$configdir/starship/starship.toml"
 [picom]="$configdir/picom.conf"
-[neomutt]="$configdir/neomutt/neomuttrc"
-[awesome]="$configdir/awesome/rc.lua")
+[awesome]="$configdir/awesome/rc.lua"
+[rofi]="$configdir/rofi/config.rasi")
 
+choice=$(printf "%s\n" "${!configs[@]}" | sort | rofi -dmenu -p "CHOOSE CONFIG" -l 10 -no-show-icons)
 
-choice=$(printf "%s\n" "${!configs[@]}" | sort | rofi -dmenu -p "CHOOSE CONFIG" -l 10)
+choice=${configs[$choice]}
+[ -z "$choice" ] && exit
 
-[ -z "${configs[$choice]}" ] && exit
-
-$TERMINAL -e $EDITOR ${configs[$choice]}
+nvim-qt $choice
