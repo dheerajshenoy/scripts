@@ -7,8 +7,8 @@ case "$output" in
         ;;
     "Logout") logout
         ;;
-    "Shutdown") shutdown now
+    "Shutdown") systemctl poweroff
         ;;
-    "Reboot") reboot
+    "Reboot") systemctl reboot
         ;;
 esac

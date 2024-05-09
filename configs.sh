@@ -16,7 +16,8 @@ configs+=(
 [starship]="$configdir/starship/starship.toml"
 [picom]="$configdir/picom.conf"
 [awesome]="$configdir/awesome/rc.lua"
-[rofi]="$configdir/rofi/config.rasi")
+[rofi]="$configdir/rofi/config.rasi"
+[qtile]="$configdir/qtile/config.py")
 
 choice=$(printf "%s\n" "${!configs[@]}" | sort | rofi -dmenu -p "CHOOSE CONFIG" -l 10 -no-show-icons)
 

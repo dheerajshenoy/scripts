@@ -1,3 +1,3 @@
 #!/bin/sh
 
-xmodmap $SCRIPTS/xmodmap
+setxkbmap -option && xmodmap $SCRIPTS/xmodmap && notify-send "Caps Ctrl Swapped"
