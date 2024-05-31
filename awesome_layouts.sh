@@ -10,7 +10,6 @@ for i = 1, l do
 end
 naughty.notify({ title = "DD", text = s.name })
 
-
 '
 
 

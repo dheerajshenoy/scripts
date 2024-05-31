@@ -24,4 +24,4 @@ choice=$(printf "%s\n" "${!configs[@]}" | sort | rofi -dmenu -p "CHOOSE CONFIG" 
 choice=${configs[$choice]}
 [ -z "$choice" ] && exit
 
-nvim-qt $choice
+alacritty -e nvim "$choice"
